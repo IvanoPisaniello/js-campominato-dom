@@ -69,6 +69,8 @@ function onBtnClick() {
     let randomNum = [];
     for (let i = 1; i < 15; i++) {
         randomNum.push(Math.floor(Math.random() * 100));
+        const isBomb = randomNum.includes();
+        console.log(isBomb)
     }
 
 
@@ -89,11 +91,6 @@ function onBtnClick() {
 
 
 
-    if (randomNum === grid) {
-        console.log(ciao);
-    } else {
-        console.log("blabla")
-    }
 
 
 
