@@ -51,15 +51,29 @@ function singleSquare(textContent) {
     box.className = "single-box";
     box.style.flexBasis = `calc(100% / 10)`;
     box.innerHTML = textContent;
-    box.addEventListener("click", function () {
+    box.addEventListener("click", onSquareclick)
+    function onSquareclick() {
         this.classList.toggle("open-cell");
         // console.log(box.innerHTML);
         console.log(textContent);
-        box.innerHTML = ("");
+        // box.innerHTML = ("");
+        bomb
+        if (bomb() === true) {
+            this.innerHTML = "<i class='fa-solid fa-bomb'></i>"
+        }
 
-    });
+
+
+    };
     return (box);
+    // function onSquareclick() {
+    //     if (isBomb === true) {
+
+    //         this.innerHTML = "<i class='fa-solid fa-bomb'></i>"
+
+    //     }
 }
+
 
 //creo un array di numeri casuali
 
@@ -69,37 +83,51 @@ function onBtnClick() {
     let randomNum = [];
     for (let i = 1; i < 15; i++) {
         randomNum.push(Math.floor(Math.random() * 100));
-        const isBomb = randomNum.includes();
-        console.log(isBomb)
-    }
 
+    }
+    console.log(randomNum)
 
 
     const totalSquares = 101;
     const grid = [];
     for (let i = 1; i < totalSquares; i++) {
-
+        function bomb() {
+            const isBomb = randomNum.includes(i);
+            console.log(isBomb)
+            return isBomb;
+        }
         const singleBox = singleSquare(i);
         grid.push(singleBox);
         squareContainer.append(singleBox);
-        // singleBox.innerHTML = (i);
 
-        // singleBox.dataset.indice = i;
-        // console.log(singleBox.dataset);
+
+
+
+
     }
+
+
+
+
+    // }
+    // singleBox.innerHTML = (i);
+
+    // singleBox.dataset.indice = i;
+    // console.log(singleBox.dataset);
     console.log(grid)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
