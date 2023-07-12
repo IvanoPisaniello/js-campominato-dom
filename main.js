@@ -61,32 +61,41 @@ function singleSquare(textContent) {
     return (box);
 }
 
+//creo un array di numeri casuali
+
+
 //generiamone 100 al click
 function onBtnClick() {
+    let randomNum = [];
+    for (let i = 1; i < 15; i++) {
+        randomNum.push(Math.floor(Math.random() * 100));
+    }
+
+
 
     const totalSquares = 101;
     const grid = [];
     for (let i = 1; i < totalSquares; i++) {
+
         const singleBox = singleSquare(i);
         grid.push(singleBox);
         squareContainer.append(singleBox);
         // singleBox.innerHTML = (i);
 
-        singleBox.dataset.indice = i;
-        console.log(singleBox.dataset);
+        // singleBox.dataset.indice = i;
+        // console.log(singleBox.dataset);
     }
     console.log(grid)
 
 
 
-    //creo un array di numeri casuali
-    let randomNum = [];
-    for (let i = 1; i < 15; i++) {
-        randomNum.push(Math.floor(Math.random() * 100));
-
-
+    if (randomNum === grid) {
+        console.log(ciao);
+    } else {
+        console.log("blabla")
     }
-    console.log(randomNum);
+
+
 
 
 
