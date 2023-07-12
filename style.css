@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    background-color: #ccc;
+}
+
+.main {
+    height: ;
+}
+
+.single-box {
+
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px outset #bbb;
+    background-color: #fff;
+    flex-shrink: 0;
+
+}
+
+.single-box:hover {
+    background-color: #bbb;
+}
+
+.square-container {
+    padding: 30px;
+    flex-shrink: 0;
+    height: calc(100vh - 112px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.open-cell {
+    background-color: #ccc;
+    border: 4px inset #bbb;
+}
+
+.fa-face-smile {
+    color: gold;
+    font-size: 1.5rem;
+}
+
+#resetButton {
+    margin-right: 80px;
+    border: 4px outset #bbb;
+}
