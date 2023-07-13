@@ -2,6 +2,7 @@
 const playButton = document.getElementById("playButton");
 const squareContainer = document.getElementById("square-container");
 const resetButton = document.getElementById("resetButton");
+const win = document.getElementById("win");
 // versione 1
 
 // creo una funzione per creare i box
@@ -38,11 +39,12 @@ const resetButton = document.getElementById("resetButton");
 
 playButton.addEventListener("click", onBtnClick);
 
-resetButton.addEventListener("click", function () {
+resetButton.addEventListener("click", onResetClick);
+function onResetClick() {
 
     location.reload();
 
-})
+}
 
 let randomNum = [];
 
@@ -64,7 +66,14 @@ function singleSquare(textContent) {
         if (isBomb === true) {
 
             this.innerHTML = "<i class='fa-solid fa-bomb'></i>"
+            resetButton.innerHTML = "<i class='fa-solid fa-face-tired'></i>"
+            win.innerHTML = "Mi dispiace hai perso!"
 
+
+
+        } else {
+            this.innerHTML = ("");
+            resetButton.innerHTML = "<i class='fa-solid fa-face-surprise'></i>"
         }
 
 

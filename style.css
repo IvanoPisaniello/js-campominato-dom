@@ -37,7 +37,9 @@ body {
     border: 4px inset #bbb;
 }
 
-.fa-face-smile {
+.fa-face-smile,
+.fa-face-tired,
+.fa-face-surprise {
     color: gold;
     font-size: 1.5rem;
 }
