@@ -30,6 +30,7 @@ body {
     height: calc(100vh - 112px);
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 
 }
 
@@ -52,8 +53,19 @@ body {
 
 .fa-bomb {
     color: red;
+    font-size: 2rem;
 }
 
 #win {
     margin-right: 100px;
+}
+
+.hai-perso {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.407);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 1;
 }

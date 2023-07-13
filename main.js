@@ -3,6 +3,8 @@ const playButton = document.getElementById("playButton");
 const squareContainer = document.getElementById("square-container");
 const resetButton = document.getElementById("resetButton");
 const win = document.getElementById("win");
+const loose = document.querySelector(".loose");
+const scoreEl = document.getElementById("score");
 // versione 1
 
 // creo una funzione per creare i box
@@ -47,7 +49,7 @@ function onResetClick() {
 }
 let gameOver = false;
 let randomNum = [];
-
+let score = 0;
 
 //creiamo il singolo elemento
 function singleSquare(textContent) {
@@ -61,16 +63,21 @@ function singleSquare(textContent) {
         // console.log(box.innerHTML);
         console.log(textContent);
         // box.innerHTML = ("");
-
+        score++;
         let isBomb = randomNum.includes(textContent);
 
         if (isBomb === true) {
 
             this.innerHTML = "<i class='fa-solid fa-bomb'></i>"
             resetButton.innerHTML = "<i class='fa-solid fa-face-tired'></i>"
-            win.innerHTML = "Mi dispiace hai perso!"
-            gameOver = true;
 
+            gameOver = true;
+            if (gameOver === true) {
+                loose.className = "hai-perso";
+                scoreEl.innerHTML = ("GAME OVER - SCORE:" + " " + score)
+                console.log("score:" + score)
+
+            }
 
         } else {
             this.innerHTML = ("");
