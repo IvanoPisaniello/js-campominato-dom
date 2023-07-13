@@ -44,6 +44,7 @@ resetButton.addEventListener("click", function () {
 
 })
 
+let randomNum = [];
 
 //creiamo il singolo elemento
 function singleSquare(textContent) {
@@ -57,10 +58,16 @@ function singleSquare(textContent) {
         // console.log(box.innerHTML);
         console.log(textContent);
         // box.innerHTML = ("");
-        bomb
-        if (bomb() === true) {
+
+        let isBomb = randomNum.includes(textContent);
+
+        if (isBomb === true) {
+
             this.innerHTML = "<i class='fa-solid fa-bomb'></i>"
+
         }
+
+
 
 
 
@@ -75,37 +82,41 @@ function singleSquare(textContent) {
 }
 
 
-//creo un array di numeri casuali
 
-
-//generiamone 100 al click
+//generiamo array 16 numeri random
 function onBtnClick() {
-    let randomNum = [];
-    for (let i = 1; i < 15; i++) {
+
+    for (let i = 0; i < 16; i++) {
         randomNum.push(Math.floor(Math.random() * 100));
 
     }
     console.log(randomNum)
 
-
+    //generiamo la griglia di 100 elementi
     const totalSquares = 101;
     const grid = [];
     for (let i = 1; i < totalSquares; i++) {
-        function bomb() {
-            const isBomb = randomNum.includes(i);
-            console.log(isBomb)
-            return isBomb;
-        }
+        //facciamo un controllo sugli array per stabilire i numeri dell'array random sono presenti nell'array delle celle
+        // let isBomb = randomNum.includes(i);
+        // console.log(isBomb)
+
+
         const singleBox = singleSquare(i);
         grid.push(singleBox);
         squareContainer.append(singleBox);
+
+
+        // if (isBomb === true) {
+
+        //     singleBox.innerHTML = "<i class='fa-solid fa-bomb'></i>"
+
+        // }
 
 
 
 
 
     }
-
 
 
 
@@ -116,11 +127,6 @@ function onBtnClick() {
     // console.log(singleBox.dataset);
     console.log(grid)
 }
-
-
-
-
-
 
 
 

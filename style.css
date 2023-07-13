@@ -46,3 +46,7 @@ body {
     margin-right: 80px;
     border: 4px outset #bbb;
 }
+
+.fa-bomb {
+    color: red;
+}
