@@ -30,6 +30,7 @@ body {
     height: calc(100vh - 112px);
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .open-cell {
@@ -51,4 +52,8 @@ body {
 
 .fa-bomb {
     color: red;
+}
+
+#win {
+    margin-right: 100px;
 }

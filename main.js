@@ -45,8 +45,9 @@ function onResetClick() {
     location.reload();
 
 }
-
+let gameOver = false;
 let randomNum = [];
+
 
 //creiamo il singolo elemento
 function singleSquare(textContent) {
@@ -68,7 +69,7 @@ function singleSquare(textContent) {
             this.innerHTML = "<i class='fa-solid fa-bomb'></i>"
             resetButton.innerHTML = "<i class='fa-solid fa-face-tired'></i>"
             win.innerHTML = "Mi dispiace hai perso!"
-
+            gameOver = true;
 
 
         } else {
@@ -82,14 +83,8 @@ function singleSquare(textContent) {
 
     };
     return (box);
-    // function onSquareclick() {
-    //     if (isBomb === true) {
 
-    //         this.innerHTML = "<i class='fa-solid fa-bomb'></i>"
-
-    //     }
 }
-
 
 
 //generiamo array 16 numeri random
@@ -106,8 +101,7 @@ function onBtnClick() {
     const grid = [];
     for (let i = 1; i < totalSquares; i++) {
         //facciamo un controllo sugli array per stabilire i numeri dell'array random sono presenti nell'array delle celle
-        // let isBomb = randomNum.includes(i);
-        // console.log(isBomb)
+
 
 
         const singleBox = singleSquare(i);
@@ -115,11 +109,6 @@ function onBtnClick() {
         squareContainer.append(singleBox);
 
 
-        // if (isBomb === true) {
-
-        //     singleBox.innerHTML = "<i class='fa-solid fa-bomb'></i>"
-
-        // }
 
 
 
@@ -129,11 +118,7 @@ function onBtnClick() {
 
 
 
-    // }
-    // singleBox.innerHTML = (i);
 
-    // singleBox.dataset.indice = i;
-    // console.log(singleBox.dataset);
     console.log(grid)
 }
 
